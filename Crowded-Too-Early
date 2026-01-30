@@ -1,0 +1,47 @@
+CTF Write-up: Bypassing Chess Game Logic via Client-Side Exploitation
+📝 Challenge Information
+Name: Crowded Too Early
+
+Category: Web Exploitation
+
+Difficulty: Easy
+
+Objective: Obtain the hidden flag by winning a chess game against the AI.
+
+🔍 Phase 1: Reconnaissance & Analysis
+Upon launching the challenge, I was presented with a web-based Chess game. The instructions stated that the flag would be revealed only after defeating the opponent.
+
+Instead of playing the match, I started by analyzing the underlying source code to understand how the flag is handled.
+
+View Page Source: I inspected the HTML source using Ctrl + U.
+
+Identifying JavaScript: I noticed several script tags handling the game engine. One specific script (e.g., app.js or logic.js) appeared to contain the win-condition logic and the flag rendering function.
+
+Code Discovery: While scanning the JavaScript code, I found a variable named flagDisplay (or similar) that was responsible for holding or showing the flag once the "checkmate" condition was met.
+
+🛠️ Phase 2: Exploitation (The Shortcut)
+Since the flag logic was executed entirely on the client-side, there was no need to actually win the game. I could interact with the global execution context directly through the browser's developer tools.
+
+Steps taken:
+Opened Chrome DevTools (F12).
+
+Navigated to the Console tab.
+
+Targeted the specific variable or object identified earlier.
+
+Executed the following command to bypass the UI and print the flag directly:
+
+JavaScript
+
+console.log(flagDisplay);
+
+Result: The console immediately returned the flag string, bypassing the entire game engine.
+
+🏆 Flag Captured: FLAG{ch3ss_d1dnt_br3@k_y0u_br0k3_th3_l@g1c}
+
+💡 Lessons Learned & Mitigation
+The Golden Rule: Never trust the client. Sensitive information (like flags or secrets) should never be stored in client-side JavaScript variables.
+
+Server-Side Validation: The "win" condition should be verified on the server. The flag should only be sent as a response from the backend after a legitimate victory is confirmed.
+
+Obfuscation: While not a complete fix, obfuscating JavaScript makes it harder (though not impossible) for attackers to find sensitive logic quickly.
