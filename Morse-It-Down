@@ -1,0 +1,30 @@
+CTF Write-up: Morse It Down 🚩
+Challenge Overview
+Name: Morse It Down
+
+Category: Cryptography
+
+Objective: Decode the provided string to retrieve the hidden flag.
+
+Initial Analysis
+Upon opening the challenge, I was greeted with a sequence consisting of dots (.) and dashes (-). This was a clear giveaway that the ciphertext was encoded using Morse Code.
+
+Step-by-Step Solution
+1. Decoding the Ciphertext
+Instead of manually translating the Morse code, I used dCode.fr, an online tool specializing in various ciphers. I pasted the encoded string into the Morse Code decoder to get the raw plaintext.
+
+2. Case Manipulation & Formatting
+The initial output from the decoder was a raw string. Since CTF flags often follow a specific case convention (PascalCase, lowercase, or ALL CAPS), I performed the following:
+
+Converted the string to Upper Case and Lower Case.
+
+Adjusted the casing to match the standard flag format required for this challenge.
+
+3. Final Configuration
+After refining the characters and ensuring the syntax was correct, the final flag was successfully reconstructed.
+
+Final Flag
+flag{morse_code_success}
+
+Tools Used
+dCode.fr - For rapid decoding.
