@@ -1,0 +1,31 @@
+CTF Write-up: Miscellaneous Challenge📝
+Challenge DescriptionChallenge
+Name: Miscellaneous Challenge
+Category: Cryptography
+Ciphertext: uozt{XGU_rh_M0g_vzhb}
+
+🔍 Initial Analysis
+The ciphertext uozt{XGU_rh_M0g_vzhb} immediately stands out due to its structure. The prefix uozt follows the same character count as the standard flag format flag.
+By analyzing the letter mapping:u (21st letter) maps to f (6th letter). In the alphabet, 21 + 6 = 27. This indicates a mirror symmetry, which is the signature of the Atbash Cipher. 
+In this cipher, the alphabet is reversed (A to Z, B to Y, etc.).
+
+🚀 Solution Steps1. 
+Identifying the CipherSince the mapping followed a reverse alphabet pattern, I identified the encryption method as the Atbash Cipher.
+
+2. Decryption Process
+
+To ensure accuracy and speed, I utilized the Atbash Cipher tool on dCode.fr.
+
+Input: uozt{XGU_rh_M0g_vzhb}
+
+Operation: Applied the Atbash transformation.
+
+Result: The tool successfully mirrored the characters while maintaining the case sensitivity and special characters.
+
+3. Flag Formatting
+
+The decrypted output was flag{CTF_is_N0t_easy}. I verified that the numbers (like 0 in N0t) and underscores remained intact, as the Atbash cipher only affects alphabetic characters.
+
+🚩 Final Flag: flag{CTF_is_N0t_easy}
+
+🛠 Tools UseddCode.fr: For automated Atbash decryption.
