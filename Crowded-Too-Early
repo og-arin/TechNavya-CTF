@@ -11,6 +11,8 @@ Objective: Obtain the hidden flag by winning a chess game against the AI.
 🔍 Phase 1: Reconnaissance & Analysis
 Upon launching the challenge, I was presented with a web-based Chess game. The instructions stated that the flag would be revealed only after defeating the opponent.
 
+Website : https://crown-to-early.onrender.com/
+
 Instead of playing the match, I started by analyzing the underlying source code to understand how the flag is handled.
 
 View Page Source: I inspected the HTML source using Ctrl + U.
